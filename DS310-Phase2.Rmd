@@ -18,7 +18,7 @@ library(ggplot2)
 
 
 ### Load Data
-Getting the tables into RStudio to be able to use them for evaluation. We will do this using the reading functions that we learned for the textbook. 
+Getting the tables into RStudio to be able to use them for evaluation. We will do this using the read functions. 
 ```{r}
 file_name <- file.choose()
 sampleSubmission <- data.table::fread(file_name)
@@ -26,6 +26,17 @@ sampleSubmission
 ```
 
 ```{r}
-
+file_name <- file.choose()
+TrainData <- data.table::fread(file_name)
+TrainData
 ```
 
+
+
+```{r}
+file_name <- file.choose()
+TestData <- data.table::fread(file_name)
+TestData
+```
+
+### Tidy Data -- Wrangling 
