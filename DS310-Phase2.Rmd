@@ -76,10 +76,15 @@ happinessTable %>%
   rename(CashCashEquivalents = `Cash and cash equivalents`) %>%
   rename(ShortTermInvestements = `Short-term investments`) %>%
   
-  rename()
+  rename(CashSTInvestments = `Cash and short-term investments`) %>%
+  rename(FreeCashFlowMargin = `Free Cash Flow margin`) %>%
+  rename(TotalCurrentAssets = `Total current assets`) %>%
+  rename(PropPlantEquipNet = `Property, Plant & Equipment Net`) %>%
+  rename(GoodwillIntangAssets= `Goodwill and Intangible Assets`) %>%
+  rename(LongTermInvestment = `Long-term investments`) %>%
+  rename(TaxAssets = `Tax assets`) %>%
   
-  
-  
+  # left off on "Total non-current" assets column #43
 ```
 
 
