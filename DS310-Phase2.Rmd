@@ -39,4 +39,47 @@ TestData <- data.table::fread(file_name)
 TestData
 ```
 
-### Tidy Data -- Wrangling 
+
+### Data Wrangling
+
+```{r}
+happinessTable %>%
+  rename(RevenueGrowth = `Revenue Growth`) %>%
+  rename(CostRevenue = `Cost of Revenue`) %>%
+  rename(GrossProfit = `Gross Profit`) %>%
+  rename(RDExpenses = `R&D Expenses`) %>%
+  rename(SGAExpense= `SG&A Expense`) %>%
+  rename(OpExpenses = `Operating Expenses`) %>%
+  rename(OpIncome = `Operating Income`) %>%
+  
+  rename(InterestExpense = `Interest Expense`) %>%
+  rename(IncomeTaxExpense = `Income Tax Expense`) %>%
+  rename(NetIncomeWOInterst = `Net Income - Non-Controlling int`) %>%
+  rename(NetIncomeDisOps = `Net Income - Discontinued ops`) %>%
+  rename(NetIncome= `Net Income`) %>%
+  rename(PerferredDividends = `Preferred Dividends`) %>%
+  rename(NetIncomeCOM = `Net Income Com`) %>%
+  
+  rename(EPSDiluted = `EPS Diluted`) %>%
+  rename(WeightedAvSHS = `Weighted Average Shs Out`) %>%
+  rename(WeightedAvSHSDil = `Weighted Average Shs Out (Dil)`) %>%
+  rename(DividendPerShare = `Dividend per Share`) %>%
+  rename(GrossMargin = `Gross Margin`) %>%
+  rename(EBITDAMargin = `EBITDA Margin`) %>%
+  rename(EBITMargin = `EBIT Margin`) %>%
+  
+  rename(ProfitMargin = `Profit Margin`) %>%
+  rename(FreeCashFlowMargin = `Free Cash Flow margin`) %>%
+  rename(ConsolidatedIncome = `Consolidated Income`) %>%
+  rename(EarningsBefTaxMargin = `Earnings Before Tax Margin`) %>%
+  rename(NetProfitMargin= `Net Profit Margin`) %>%
+  rename(CashCashEquivalents = `Cash and cash equivalents`) %>%
+  rename(ShortTermInvestements = `Short-term investments`) %>%
+  
+  rename()
+  
+  
+  
+```
+
+
