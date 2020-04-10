@@ -43,7 +43,9 @@ TestData
 ### Data Wrangling
 
 ```{r}
-happinessTable %>%
+
+CleanedTrain <-
+  TrainData %>%
   rename(RevenueGrowth = `Revenue Growth`) %>%
   rename(CostRevenue = `Cost of Revenue`) %>%
   rename(GrossProfit = `Gross Profit`) %>%
@@ -51,40 +53,63 @@ happinessTable %>%
   rename(SGAExpense= `SG&A Expense`) %>%
   rename(OpExpenses = `Operating Expenses`) %>%
   rename(OpIncome = `Operating Income`) %>%
-  
   rename(InterestExpense = `Interest Expense`) %>%
   rename(IncomeTaxExpense = `Income Tax Expense`) %>%
-  rename(NetIncomeWOInterst = `Net Income - Non-Controlling int`) %>%
-  rename(NetIncomeDisOps = `Net Income - Discontinued ops`) %>%
   rename(NetIncome= `Net Income`) %>%
-  rename(PerferredDividends = `Preferred Dividends`) %>%
-  rename(NetIncomeCOM = `Net Income Com`) %>%
-  
-  rename(EPSDiluted = `EPS Diluted`) %>%
-  rename(WeightedAvSHS = `Weighted Average Shs Out`) %>%
-  rename(WeightedAvSHSDil = `Weighted Average Shs Out (Dil)`) %>%
-  rename(DividendPerShare = `Dividend per Share`) %>%
-  rename(GrossMargin = `Gross Margin`) %>%
-  rename(EBITDAMargin = `EBITDA Margin`) %>%
-  rename(EBITMargin = `EBIT Margin`) %>%
-  
   rename(ProfitMargin = `Profit Margin`) %>%
-  rename(FreeCashFlowMargin = `Free Cash Flow margin`) %>%
-  rename(ConsolidatedIncome = `Consolidated Income`) %>%
-  rename(EarningsBefTaxMargin = `Earnings Before Tax Margin`) %>%
   rename(NetProfitMargin= `Net Profit Margin`) %>%
-  rename(CashCashEquivalents = `Cash and cash equivalents`) %>%
-  rename(ShortTermInvestements = `Short-term investments`) %>%
-  
-  rename(CashSTInvestments = `Cash and short-term investments`) %>%
-  rename(FreeCashFlowMargin = `Free Cash Flow margin`) %>%
   rename(TotalCurrentAssets = `Total current assets`) %>%
-  rename(PropPlantEquipNet = `Property, Plant & Equipment Net`) %>%
-  rename(GoodwillIntangAssets= `Goodwill and Intangible Assets`) %>%
-  rename(LongTermInvestment = `Long-term investments`) %>%
-  rename(TaxAssets = `Tax assets`) %>%
-  
-  # left off on "Total non-current" assets column #43
+  rename(TotalAssets = `Total assets`) %>%
+  rename(TotalDebt = `Total debt`) %>%
+  rename(TaxLiability = `Tax Liabilities`) %>%
+  rename(TotalNonCurrentAssests = `Net Debt`) %>%
+  rename(InvestementPurchSales = `Investment purchases and sales`) %>%
+  rename(AssetGrowth = `Asset Growth`) %>%
+  rename(DebtGrowth = `Debt Growth`) 
+CleanedTrain
+
 ```
 
+```{r}
+CleanedTest <-
+  TestData %>%
+  rename(RevenueGrowth = `Revenue Growth`) %>%
+  rename(CostRevenue = `Cost of Revenue`) %>%
+  rename(GrossProfit = `Gross Profit`) %>%
+  rename(RDExpenses = `R&D Expenses`) %>%
+  rename(SGAExpense= `SG&A Expense`) %>%
+  rename(OpExpenses = `Operating Expenses`) %>%
+  rename(OpIncome = `Operating Income`) %>%
+  rename(InterestExpense = `Interest Expense`) %>%
+  rename(IncomeTaxExpense = `Income Tax Expense`) %>%
+  rename(NetIncome= `Net Income`) %>%
+  rename(ProfitMargin = `Profit Margin`) %>%
+  rename(NetProfitMargin= `Net Profit Margin`) %>%
+  rename(TotalCurrentAssets = `Total current assets`) %>%
+  rename(TotalAssets = `Total assets`) %>%
+  rename(TotalDebt = `Total debt`) %>%
+  rename(TaxLiability = `Tax Liabilities`) %>%
+  rename(TotalNonCurrentAssests = `Net Debt`) %>%
+  rename(InvestementPurchSales = `Investment purchases and sales`) %>%
+  rename(AssetGrowth = `Asset Growth`) %>%
+  rename(DebtGrowth = `Debt Growth`) 
+CleanedTest
+```
+
+### Filter out the data to only have select variables for analysis
+```{r}
+NewTrain <-
+  CleanedTrain %>%
+  select(Name, netProfitMargin, Sector, RevenueGrowth, CostRevenue, GrossProfit, RDExpenses, SGAExpense, OpExpenses, OpIncome, InterestExpense, IncomeTaxExpense, NetIncome, ProfitMargin, NetProfitMargin, TotalCurrentAssets, TotalAssets, TotalDebt, TaxLiability, TotalNonCurrentAssests, InvestementPurchSales, AssetGrowth, DebtGrowth )
+
+NewTrain
+```
+
+```{r}
+NewTest <-
+  CleanedTest%>%
+  select(Name, netProfitMargin, Sector, RevenueGrowth, CostRevenue, GrossProfit, RDExpenses, SGAExpense, OpExpenses, OpIncome, InterestExpense, IncomeTaxExpense, NetIncome, ProfitMargin, NetProfitMargin, TotalCurrentAssets, TotalAssets, TotalDebt, TaxLiability, TotalNonCurrentAssests, InvestementPurchSales, AssetGrowth, DebtGrowth )
+
+NewTest
+```
 
