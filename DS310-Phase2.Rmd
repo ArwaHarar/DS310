@@ -14,6 +14,7 @@ library(lubridate)
 library(dplyr)
 library(readr)
 library(ggplot2)
+library(data.table)
 ```
 
 
@@ -113,3 +114,6 @@ NewTest <-
 NewTest
 ```
 
+```{r}
+fwrite(sampleSubmission, "submit.csv")
+```
