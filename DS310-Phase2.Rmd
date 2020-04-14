@@ -14,6 +14,7 @@ library(lubridate)
 library(dplyr)
 library(readr)
 library(ggplot2)
+library(data.table)
 ```
 
 
@@ -114,6 +115,7 @@ NewTest <-
 NewTest
 ```
 
+
 ### Create a Class Column that Return True if RevenueGrowth > DebtGrowth and False Otherwise
 ```{r}
 ClassTableTrain <-
@@ -129,4 +131,9 @@ ClassTableTest <-
 ClassTableTest
 ```
 
-### Convert the Class to 1/0 Values 
+
+```{r}
+fwrite(sampleSubmission, "submit.csv")
+```
+>>>>>>> 75d9fe2ea4d5fbf73bd684d0d2ed52713b8f8857
+
