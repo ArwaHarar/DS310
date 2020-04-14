@@ -129,4 +129,4 @@ ClassTableTest <-
 ClassTableTest
 ```
 
-
+### Convert the Class to 1/0 Values 
