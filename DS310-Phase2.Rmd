@@ -100,7 +100,7 @@ CleanedTest
 ```{r}
 NewTrain <-
   CleanedTrain %>%
-  select(Name, netProfitMargin, Sector, RevenueGrowth, CostRevenue, GrossProfit, RDExpenses, SGAExpense, OpExpenses, OpIncome, InterestExpense, IncomeTaxExpense, NetIncome, ProfitMargin, NetProfitMargin, TotalCurrentAssets, TotalAssets, TotalDebt, TaxLiability, TotalNonCurrentAssests, InvestementPurchSales, AssetGrowth, DebtGrowth )
+  select(Name, RevenueGrowth,GrossProfit,NetIncome, ProfitMargin, NetProfitMargin, TotalDebt, AssetGrowth, DebtGrowth )
 
 NewTrain
 ```
@@ -108,8 +108,25 @@ NewTrain
 ```{r}
 NewTest <-
   CleanedTest%>%
-  select(Name, netProfitMargin, Sector, RevenueGrowth, CostRevenue, GrossProfit, RDExpenses, SGAExpense, OpExpenses, OpIncome, InterestExpense, IncomeTaxExpense, NetIncome, ProfitMargin, NetProfitMargin, TotalCurrentAssets, TotalAssets, TotalDebt, TaxLiability, TotalNonCurrentAssests, InvestementPurchSales, AssetGrowth, DebtGrowth )
+  select(Name, RevenueGrowth,GrossProfit,NetIncome, ProfitMargin, NetProfitMargin, TotalDebt, AssetGrowth, DebtGrowth )
+
 
 NewTest
 ```
+
+### Create a Class Column that Return True if RevenueGrowth > DebtGrowth and False Otherwise
+```{r}
+ClassTableTrain <-
+  NewTrain %>%
+  transmute(Name = Name, class = RevenueGrowth > DebtGrowth)
+ClassTableTrain
+```
+
+```{r}
+ClassTableTest <-
+  NewTrain %>%
+  transmute(Name = Name, class = RevenueGrowth > DebtGrowth)
+ClassTableTest
+```
+
 
