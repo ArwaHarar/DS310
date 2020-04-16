@@ -134,6 +134,7 @@ ClassTableTest
 ```
 
 
+### Remove the NA Values
 
 
 ```{r}
