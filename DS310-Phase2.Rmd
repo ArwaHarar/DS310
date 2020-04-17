@@ -102,7 +102,7 @@ CleanedTest
 ```{r}
 NewTrain <-
   CleanedTrain %>%
-  select(Name, RevenueGrowth,GrossProfit,NetIncome, ProfitMargin, NetProfitMargin, TotalDebt, AssetGrowth, DebtGrowth )
+  select(Name, RevenueGrowth,GrossProfit,NetIncome, ProfitMargin, NetProfitMargin, TotalDebt, AssetGrowth, DebtGrowth, Class )
 
 NewTrain
 ```
@@ -116,25 +116,13 @@ NewTest <-
 NewTest
 ```
 
-
-### Create a Class Column that Return True if RevenueGrowth > DebtGrowth and False Otherwise
-```{r}
-ClassTableTrain <-
-  NewTrain %>%
-  transmute(Name = Name, class = RevenueGrowth > DebtGrowth)
-ClassTableTrain
-```
-
-
-```{r}
-ClassTableTest <-
-  NewTrain %>%
-  transmute(Name = Name, class = RevenueGrowth > DebtGrowth)
-ClassTableTest
-```
-
+*** TRAIN DATA HAS COLUMN CALLED CLASS *** 
 
 ### Remove the NA Values
+
+
+
+
 
 
 ```{r}
