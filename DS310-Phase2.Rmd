@@ -7,15 +7,14 @@ output: html_notebook
 
 Installing the libraries that are needed to be able to load and preform queries on the dataset.
 ```{r}
-library(DataComputing)
 library(tidyverse)
 library(rvest)
 library(lubridate)
 library(dplyr)
 library(readr)
-library(ggplot2)
 library(data.table)
 library(dataPreparation)
+library(class)
 ```
 
 
@@ -120,8 +119,42 @@ NewTest
 
 ### Remove the NA Values
 
+```{r}
+Train <- 
+  na.omit(NewTrain) 
+Train
+```
+
+```{r}
+Test <-
+  na.omit(NewTest)
+Test
+```
 
 
+### Machine Learning on the Training Data to Train the Test
+```{r}
+# a) linear algorithms
+set.seed(7)
+fit.lda <- 
+  train(Train~., data=dataset, method="lda", metric=metric, trControl=control)
+
+```
+
+
+```{r}
+# kNN
+set.seed(7)
+fit.knn <- 
+  knn(Train, Test, cl = class , k = 1, l=0, prob = FALSE, use.all = TRUE)
+```
+
+```{r}
+# SVM
+set.seed(7)
+fit.svm <- train(Class~., data=dataset, method="svmRadial", metric=metric, trControl=control)
+
+```
 
 
 
